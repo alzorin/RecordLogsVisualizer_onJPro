@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.CheckComboBox?>
+
+<VBox fx:id="start" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.recordlogs.controller.StartController">
+   <children>
+      <MenuBar fx:id="menuBar">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#closeButtonPushed" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="startHelp" mnemonicParsing="false" onAction="#openStartHelp" text="Documentation" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane fx:id="StartAnchorPane" prefHeight="414.0" prefWidth="600.0">
+      <Button fx:id="BrowseFile" layoutX="355.0" layoutY="147.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="26.0" prefWidth="124.0" text="Browse CSV File" />
+      <ComboBox fx:id="caseComboBox" layoutX="96.0" layoutY="47.0" prefHeight="26.0" prefWidth="150.0" promptText="case column">
+            <tooltip>
+               <Tooltip text="case column" />
+            </tooltip></ComboBox>
+      <ComboBox fx:id="activityComboBox" layoutX="96.0" layoutY="160.0" prefHeight="26.0" prefWidth="150.0" promptText="activity column">
+            <tooltip>
+               <Tooltip text="activity column" />
+            </tooltip></ComboBox>
+      <ComboBox fx:id="timestampComboBox" layoutX="96.0" layoutY="83.0" prefHeight="26.0" prefWidth="150.0" promptText="timestamp column">
+            <tooltip>
+               <Tooltip text="timestamp column" />
+            </tooltip></ComboBox>
+
+      <Button fx:id="NextScreen" layoutX="543.0" layoutY="333.0" mnemonicParsing="false" onAction="#NextScreenButtonPushed" text="Next" />
+      <CheckComboBox fx:id="measurementsCheckComboBox" layoutX="96.0" layoutY="198.0" prefHeight="26.0" prefWidth="150.0" title="measurements columns">
+            <tooltip>
+               <Tooltip fx:id="measurementsTooltip" text="measurement columns" />
+            </tooltip></CheckComboBox>
+         <TextField fx:id="DateFormatInput" layoutX="96.0" layoutY="262.0" prefHeight="26.0" prefWidth="150.0" promptText="Timestamp format">
+            <tooltip>
+               <Tooltip text="Customize timestamp format" />
+            </tooltip></TextField>
+         <TextField fx:id="CSVDelimiterInput" layoutX="96.0" layoutY="299.0" prefHeight="26.0" prefWidth="150.0" promptText="CSV delimiter">
+            <tooltip>
+               <Tooltip text="Customize CSV Delimiter" />
+            </tooltip>
+         </TextField>
+<!--         <TextField layoutX="96.0" layoutY="283.0" prefHeight="26.0" prefWidth="150.0" text="CSV delimiter" />-->
+         <CheckBox fx:id="DateFormatCheckbox" layoutX="69.0" layoutY="266.0" mnemonicParsing="false">
+            <tooltip>
+               <Tooltip text="If disabled:  yyyy-MM-dd HH:mm:ssXXX" />
+            </tooltip></CheckBox>
+         <Line endX="71.5" layoutX="173.0" layoutY="251.0" startX="-75.5" stroke="#000000cf" />
+         <Text fill="#000000cf" fontSmoothingType="LCD" layoutX="97.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Optional parameters" textAlignment="CENTER" wrappingWidth="148.0" />
+         <CheckBox fx:id="CSVDelimiterCheckbox" layoutX="69.0" layoutY="303.0" mnemonicParsing="false">
+            <tooltip>
+               <Tooltip text="If disabled: ;" />
+            </tooltip>
+         </CheckBox>
+         <ComboBox fx:id="typeComboBox" layoutX="96.0" layoutY="121.0" prefHeight="26.0" prefWidth="150.0" promptText="type column">
+            <tooltip>
+               <Tooltip text="type column" />
+            </tooltip>
+         </ComboBox>
+<!--         <CheckBox layoutX="68.0" layoutY="287.0" mnemonicParsing="false" />-->
+      </AnchorPane>
+   </children>
+</VBox>

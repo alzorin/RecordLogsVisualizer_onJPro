@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="charts" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.recordlogs.controller.ChartsController">
+    <children>
+        <MenuBar fx:id="menuBar">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="menuOpenFile" mnemonicParsing="false" onAction="#goToStart" text="Open CSV" />
+                        <MenuItem fx:id="closeButtonPushed" mnemonicParsing="false" onAction="#closeButtonPushed" text="Close" />
+                    </items>
+                </Menu>
+                <Menu fx:id="measurementsMenu" mnemonicParsing="false" text="Measurements">
+                </Menu>
+                <Menu fx:id="casesMenu" mnemonicParsing="false" text="Cases">
+               <items>
+                  <MenuItem fx:id="selectAllCases" mnemonicParsing="false" text="select all" />
+                  <MenuItem fx:id="deselectAllCases" mnemonicParsing="false" text="deselect all" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+               </items></Menu>
+            <Menu fx:id="datasetsMenu" mnemonicParsing="false" text="Activities">
+               <items>
+                  <MenuItem fx:id="selectAllDatasets" mnemonicParsing="false" text="select all" />
+                  <MenuItem fx:id="deselectAllDatasets" mnemonicParsing="false" text="deselect all" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Legend">
+               <items>
+                  <MenuItem fx:id="BottomSide" mnemonicParsing="false" onAction="#SetLegendOnTheBottom" text="Display legend" />
+                  <MenuItem fx:id="HideLegend" mnemonicParsing="false" onAction="#SetLegendNotVisible" text="Hide legend" />
+               </items>
+            </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                   <items>
+                       <MenuItem fx:id="chartHelp" mnemonicParsing="false" onAction="#openChartHelp" text="Documentation" />
+                   </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <StackPane fx:id="ChartsPane" prefHeight="400.0" prefWidth="600.0" VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>
